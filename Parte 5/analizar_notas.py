@@ -36,3 +36,20 @@ def analizar_notas(alumnos: List[Tuple[str, float]]) -> Dict[str, Union[float, O
         "nota_media": round(nota_media, 2), # Redondeo para legibilidad [cite: 103, 111]
         "mejor_alumno": mejor_alumno
     }
+
+if __name__ == "__main__":
+    # Datos de ejemplo
+    lista_alumnos = [
+        ("Ana", 8.5),
+        ("Luis", 9.2),
+        ("Marta", 7.0),
+        ("Juan", 4.5)
+    ]
+
+    try:
+        resultado = analizar_notas(lista_alumnos)
+        print("--- Resultados del Análisis ---")
+        for clave, valor in resultado.items():
+            print(f"{clave.replace('_', ' ').capitalize()}: {valor}")
+    except ValueError as e:
+        print(f"Error: {e}")
