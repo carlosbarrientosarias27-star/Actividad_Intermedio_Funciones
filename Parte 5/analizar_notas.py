@@ -3,8 +3,9 @@ from typing import List, Tuple, Dict, Union, Optional
 def analizar_notas(alumnos: List[Tuple[str, float]]) -> Dict[str, Union[float, Optional[str]]]:
     """
     Analiza una lista de alumnos y sus notas para calcular estadísticas básicas.
+    Lanza ValueError si alguna nota no está en el rango [0, 10].
     """
-    # Manejo del caso de lista vacía
+    # 1. Manejo del caso de lista vacía [cite: 85]
     if not alumnos:
         return {
             "nota_maxima": None,
@@ -13,25 +14,25 @@ def analizar_notas(alumnos: List[Tuple[str, float]]) -> Dict[str, Union[float, O
             "mejor_alumno": None
         }
 
-    # Extraemos solo las notas para cálculos numéricos
+    # 2. Validación de rangos (Nueva mejora sugerida) [cite: 113, 114]
+    for nombre, nota in alumnos:
+        if not (0 <= nota <= 10):
+            raise ValueError(f"Nota inválida para {nombre}: {nota}. Debe estar entre 0 y 10.")
+
+    # 3. Extraemos solo las notas para cálculos numéricos [cite: 92]
     notas = [alumno[1] for alumno in alumnos]
 
-    # Calculamos las estadísticas
+    # 4. Calculamos las estadísticas [cite: 94, 95, 96]
     nota_maxima = max(notas)
     nota_minima = min(notas)
     nota_media = sum(notas) / len(notas)
 
-    # Buscamos al alumno con la nota máxima (Corregido key=lambda)
+    # 5. Buscamos al alumno con la nota máxima [cite: 98]
     mejor_alumno = max(alumnos, key=lambda x: x[1])[0]
 
     return {
         "nota_maxima": nota_maxima,
         "nota_minima": nota_minima,
-        "nota_media": round(nota_media, 2), # Se incluye dentro del diccionario
+        "nota_media": round(nota_media, 2), # Redondeo para legibilidad [cite: 103, 111]
         "mejor_alumno": mejor_alumno
     }
-
-# --- Ejemplo de uso práctico ---
-lista_clase = [("Carlos", 6.5), ("Sofía", 9.8), ("Jorge", 4.2), ("Elena", 8.9)]
-resultado = analizar_notas(lista_clase)
-print(resultado)
