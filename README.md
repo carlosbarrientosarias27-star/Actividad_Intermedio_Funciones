@@ -1,5 +1,3 @@
-# Actividad_Intermedio_Funciones 
-
 # Actividad Intermedia: Funciones en Python
 
 Este repositorio contiene una serie de ejercicios prácticos diseñados para profundizar en el uso de funciones, modularización y lógica de procesamiento en Python. El proyecto está dividido en bloques lógicos (paquetes) que abordan diferentes problemas del mundo real.
@@ -8,11 +6,11 @@ Este repositorio contiene una serie de ejercicios prácticos diseñados para pro
 
 El repositorio se organiza de la siguiente manera:
 
-Parte 4/: Enfocada en la gestión de flujos de trabajo comerciales.
+## Parte 4/: Enfocada en la gestión de flujos de trabajo comerciales.
 
 procesar_pedido.py: Contiene la lógica para calcular totales, aplicar descuentos y gestionar el estado de pedidos.
 
-Parte 5/: Enfocada en el análisis de datos y procesamiento estadístico.
+## Parte 5/: Enfocada en el análisis de datos y procesamiento estadístico.
 
 analizar_notas.py: Implementa funciones para el cálculo de promedios, detección de valores atípicos y reportes académicos.
 
@@ -35,12 +33,15 @@ No se requieren dependencias externas adicionales (usa bibliotecas estándar de 
 
 Al estar estructurado como paquetes de Python, puedes ejecutar cada módulo directamente desde la raíz del proyecto utilizando el flag -m.
 
-Ejecutar Parte 4 (Procesamiento de Pedidos)
+## Ejecutar Parte 4 (Procesamiento de Pedidos) 
+
 Para probar la lógica de los pedidos, ejecuta:
 
 Bash
-python -m Parte_4.procesar_pedido
-Ejecutar Parte 5 (Análisis de Notas)
+python -m Parte_4.procesar_pedido 
+
+## Ejecutar Parte 5 (Análisis de Notas)
+
 Para calcular las estadísticas de las notas, ejecuta:
 
 Bash
